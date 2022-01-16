@@ -8,11 +8,13 @@ def source_paths
 end
 
 def add_gems
-  gem 'devise', '~> 4.8'
-  gem 'friendly_id', '~> 5.4', '>= 5.4.2'
-  gem 'name_of_person', '~> 1.1', '>= 1.1.1'
-  gem 'pay', '~> 3.0' # https://github.com/pay-rails/
-  gem 'stripe', '>= 2.8', '< 6.0' # I prefer Stripe but you can opt for braintree or paddle too. https://github.com/pay-rails/pay/blob/master/docs/1_installation.md#gemfile
+  gem "devise", "~> 4.8"
+  gem "friendly_id", "~> 5.4", ">= 5.4.2"
+  gem "name_of_person", "~> 1.1", ">= 1.1.1"
+  gem "pay", "~> 3.0" # https://github.com/pay-rails/
+  gem "stripe", ">= 2.8", "< 6.0" # I prefer Stripe but you can opt for braintree or paddle too. https://github.com/pay-rails/pay/blob/master/docs/1_installation.md#gemfile
+  gem "image_processing", "~> 1.2"
+  gem "cssbundling-rails"
 end
 
 def add_css_bundling
@@ -32,7 +34,7 @@ def add_users
 
   # Configure Devise
   environment "config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }",
-              env: 'development'
+              env: "development"
 
   route "root to: 'home#index'"
 

@@ -1,5 +1,5 @@
-- Setup goodjob instead
-- Setup multitenancy on an Account model (maybe make this a flag/optional?)
+- Setup goodjob instead of sidekiq
+- Setup multitenancy on an Account model
 - Setup UUID as default for all models
 - Setup dotenv
 - Setup view_components with sidecar components
@@ -10,3 +10,5 @@
 - Install Stimulus Use
 - Get google analytics to work correctly
 - Setup rails_admin impersonate
+- Setup fancy flash messages: https://dev.to/citronak/modern-rails-flash-messages-part-1-viewcomponent-stimulus-tailwind-css-3alm
+- Make multitenancy a flag/question in template
