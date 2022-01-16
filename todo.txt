@@ -1,0 +1,12 @@
+- Setup goodjob instead
+- Setup multitenancy on an Account model (maybe make this a flag/optional?)
+- Setup UUID as default for all models
+- Setup dotenv
+- Setup view_components with sidecar components
+- Setup structure for using Service Objects
+- Extend templates to have better Admin shell (navbar, sample page with cards)
+- Setup rails_admin with specific admin user model with access
+- Setup pundit
+- Install Stimulus Use
+- Get google analytics to work correctly
+- Setup rails_admin impersonate

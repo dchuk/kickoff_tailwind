@@ -1,7 +1,5 @@
 =begin
 Template Name: Kickoff - Tailwind CSS
-Author: Andy Leverenz
-Author URI: https://web-crunch.com
 Instructions: $ rails new myapp -d <postgresql, mysql, sqlite3> -m template.rb
 =end
 
@@ -12,9 +10,7 @@ end
 def add_gems
   gem 'devise', '~> 4.8'
   gem 'friendly_id', '~> 5.4', '>= 5.4.2'
-  gem 'sidekiq', '~> 6.3', '>= 6.3.1'
   gem 'name_of_person', '~> 1.1', '>= 1.1.1'
-  gem 'cssbundling-rails'
   gem 'pay', '~> 3.0' # https://github.com/pay-rails/
   gem 'stripe', '>= 2.8', '< 6.0' # I prefer Stripe but you can opt for braintree or paddle too. https://github.com/pay-rails/pay/blob/master/docs/1_installation.md#gemfile
 end
@@ -41,13 +37,12 @@ def add_users
   route "root to: 'home#index'"
 
   # Create Devise User
-  generate :devise, "User", "first_name", "last_name", "admin:boolean"
+  generate :devise, "User", "first_name", "last_name"
 
   # set admin boolean to false by default
-  in_root do
-    migration = Dir.glob("db/migrate/*").max_by{ |f| File.mtime(f) }
-    gsub_file migration, /:admin/, ":admin, default: false"
-  end
+  # in_root do
+  #   migration = Dir.glob("db/migrate/*").max_by{ |f| File.mtime(f) }
+  # end
 
   # name_of_person gem
   append_to_file("app/models/user.rb", "\nhas_person_name\n", after: "class User < ApplicationRecord")
@@ -57,18 +52,18 @@ def copy_templates
   directory "app", force: true
 end
 
-def add_sidekiq
+def add_goodjob
   environment "config.active_job.queue_adapter = :sidekiq"
 
   insert_into_file "config/routes.rb",
     "require 'sidekiq/web'\n\n",
     before: "Rails.application.routes.draw do"
 
-  content = <<-RUBY
-    authenticate :user, lambda { |u| u.admin? } do
-      mount Sidekiq::Web => '/sidekiq'
-    end
-  RUBY
+  # content = <<-RUBY
+  #   authenticate :user, lambda { |u| u.admin? } do
+  #     mount Sidekiq::Web => '/sidekiq'
+  #   end
+  # RUBY
   insert_into_file "config/routes.rb", "#{content}\n\n", after: "Rails.application.routes.draw do\n"
 end
 
@@ -81,7 +76,7 @@ def add_pay
 
   # add pay_customer to user
   # https://github.com/pay-rails/pay/blob/master/docs/1_installation.md#models
-  append_to_file("app/models/user.rb", "\npay_customer\n", after: "class User < ApplicationRecord")
+  # append_to_file("app/models/user.rb", "\npay_customer\n", after: "class User < ApplicationRecord")
 end
 
 def add_tailwind_plugins
@@ -99,7 +94,7 @@ after_bundle do
   add_css_bundling
   add_tailwind_plugins
   add_users
-  add_sidekiq
+  # add_sidekiq
   copy_templates
   add_friendly_id
   add_pay
