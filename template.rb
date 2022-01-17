@@ -92,8 +92,8 @@ source_paths
 add_gems
 
 after_bundle do
-  add_storage_and_rich_text
   add_css_bundling
+  add_storage_and_rich_text
   add_tailwind_plugins
   add_users
   # add_sidekiq
