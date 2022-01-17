@@ -12,3 +12,6 @@
 - Setup rails_admin impersonate
 - Setup fancy flash messages: https://dev.to/citronak/modern-rails-flash-messages-part-1-viewcomponent-stimulus-tailwind-css-3alm
 - Make multitenancy a flag/question in template
+- style kaminari pagination
+- create some simple solution for modals with remote links
+- styled billing/pricing pages
