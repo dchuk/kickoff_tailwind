@@ -1,3 +1,4 @@
+MVP
 - Setup goodjob instead of sidekiq
 - Setup multitenancy on an Account model
 - Setup UUID as default for all models
@@ -6,12 +7,16 @@
 - Setup structure for using Service Objects
 - Extend templates to have better Admin shell (navbar, sample page with cards)
 - Setup rails_admin with specific admin user model with access
-- Setup pundit
 - Install Stimulus Use
 - Get google analytics to work correctly
 - Setup rails_admin impersonate
 - Setup fancy flash messages: https://dev.to/citronak/modern-rails-flash-messages-part-1-viewcomponent-stimulus-tailwind-css-3alm
-- Make multitenancy a flag/question in template
 - style kaminari pagination
-- create some simple solution for modals with remote links
+- modals with remote links: https://www.bearer.com/blog/how-to-build-modals-with-hotwire-turbo-frames-stimulusjs
+
+Future
+- Make multitenancy a flag/question in template
 - styled billing/pricing pages
+- Setup pundit
+- Setup static pages with high voltage: https://github.com/thoughtbot/high_voltage
+
