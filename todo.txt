@@ -1,22 +1,26 @@
+rails new test_app -m ~/code/rails/kickoff_tailwind/template.rb -d=postgresql -j esbuild
+
 MVP
-- Setup goodjob instead of sidekiq
-- Setup multitenancy on an Account model
-- Setup UUID as default for all models
+  - Setup UUID as default for all models
+  - Setup good_job
+- Get good_job dashboard working https://github.com/bensheldon/good_job#dashboard
 - Setup dotenv
 - Setup view_components with sidecar components
 - Setup structure for using Service Objects
-- Extend templates to have better Admin shell (navbar, sample page with cards)
-- Setup rails_admin with specific admin user model with access
+- Extend templates to have better template shell (navbar, sample page with cards)
+- Setup rails_admin with specific admin user model with access (Maybe Administrate?)
 - Install Stimulus Use
 - Get google analytics to work correctly
 - Setup rails_admin impersonate
-- Setup fancy flash messages: https://dev.to/citronak/modern-rails-flash-messages-part-1-viewcomponent-stimulus-tailwind-css-3alm
 - style kaminari pagination
-- modals with remote links: https://www.bearer.com/blog/how-to-build-modals-with-hotwire-turbo-frames-stimulusjs
 
 Future
 - Make multitenancy a flag/question in template
+- Setup multitenancy on an Account model
+- Make billing a flag/question in template
+- Setup Pay gem
 - styled billing/pricing pages
+- Setup fancy flash messages: https://dev.to/citronak/modern-rails-flash-messages-part-1-viewcomponent-stimulus-tailwind-css-3alm
+- modals with remote links: https://www.bearer.com/blog/how-to-build-modals-with-hotwire-turbo-frames-stimulusjs
 - Setup pundit
 - Setup static pages with high voltage: https://github.com/thoughtbot/high_voltage
-
