@@ -1,26 +1,27 @@
 rails new test_app -m ~/code/rails/kickoff_tailwind/template.rb -d=postgresql -j esbuild
 
 MVP
-  - Setup UUID as default for all models
-  - Setup good_job
-- Get good_job dashboard working https://github.com/bensheldon/good_job#dashboard
-- Setup dotenv
-- Setup view_components with sidecar components
-- Setup structure for using Service Objects
-- Extend templates to have better template shell (navbar, sample page with cards)
-- Setup rails_admin with specific admin user model with access (Maybe Administrate?)
-- Install Stimulus Use
-- Get google analytics to work correctly
-- Setup rails_admin impersonate
-- style kaminari pagination
+x Setup UUID as default for all models
+x Setup good_job
+x Get good_job dashboard working https://github.com/bensheldon/good_job#dashboard
+x Setup view_components with sidecar components and automatic stimulus controller generation (https://github.com/github/view_component/issues/1064)
+Setup structure for using Service Objects
+Extend templates to have better template shell (navbar, sample page with cards)
+Setup rails_admin with specific admin user model with access (https://stackoverflow.com/questions/27102718/rails-admin-should-i-have-admin-user-or-user-with-admin-role-to-manage-users-an)
+Restrict good_job access to admin user specifically
+Install Stimulus Use
+Get google analytics to work correctly
+Setup rails_admin impersonate
+style kaminari pagination
+Setup dotenv
 
 Future
-- Make multitenancy a flag/question in template
-- Setup multitenancy on an Account model
-- Make billing a flag/question in template
-- Setup Pay gem
-- styled billing/pricing pages
-- Setup fancy flash messages: https://dev.to/citronak/modern-rails-flash-messages-part-1-viewcomponent-stimulus-tailwind-css-3alm
-- modals with remote links: https://www.bearer.com/blog/how-to-build-modals-with-hotwire-turbo-frames-stimulusjs
-- Setup pundit
-- Setup static pages with high voltage: https://github.com/thoughtbot/high_voltage
+Make multitenancy a flag/question in template
+Setup multitenancy on an Account model
+Make billing a flag/question in template
+Setup Pay gem
+styled billing/pricing pages
+Setup fancy flash messages: https://dev.to/citronak/modern-rails-flash-messages-part-1-viewcomponent-stimulus-tailwind-css-3alm
+modals with remote links: https://www.bearer.com/blog/how-to-build-modals-with-hotwire-turbo-frames-stimulusjs
+Setup pundit
+Setup static pages with high voltage: https://github.com/thoughtbot/high_voltage

@@ -14,6 +14,7 @@ def add_gems
   gem 'image_processing', '~> 1.2'
   gem 'cssbundling-rails'
   gem 'good_job'
+  gem 'view_component'
 end
 
 def add_css_bundling
@@ -70,12 +71,31 @@ def add_users
   append_to_file('app/models/user.rb', "\nhas_person_name\n", after: 'class User < ApplicationRecord')
 end
 
-def add_goodjob
+def add_good_job
   generate 'good_job:install'
   rails_command 'db:migrate'
   application 'config.active_job.queue_adapter = :good_job'
 
   # get dashboard working https://github.com/bensheldon/good_job#dashboard
+  inject_into_file 'config/application.rb', after: 'require "rails/all"' do
+    "\nrequire 'good_job/engine'"
+  end
+  route "mount GoodJob::Engine => 'good_job'"
+end
+
+def add_view_components
+  # configures sidecar assets and automatic stimulus controller generation
+  application 'config.view_component.generate_sidecar = true'
+  application 'config.view_component.generate_stimulus_controller = true'
+
+  # Source: https://github.com/github/view_component/issues/1064#issuecomment-974733856
+  directory 'lib', force: true
+  inject_into_file 'app/javascript/application.js', after: 'import "@rails/actiontext"' do
+    "\nimport '../components';"
+  end
+
+  directory 'app/components', force: true
+  rails_command 'stimulus:manifest:update'
 end
 
 def copy_templates
@@ -112,7 +132,8 @@ after_bundle do
   add_storage_and_rich_text
   add_tailwind_plugins
   add_users
-  add_goodjob
+  add_good_job
+  add_view_components
   copy_templates
   add_friendly_id
   # add_pay
