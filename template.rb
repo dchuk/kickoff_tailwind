@@ -95,7 +95,6 @@ def add_view_components
   end
 
   directory 'app/components', force: true
-  rails_command 'stimulus:manifest:update'
 end
 
 def copy_templates

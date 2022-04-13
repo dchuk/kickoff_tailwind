@@ -9,10 +9,10 @@
 	<div class="block lg:hidden">
 		<%# Mobile nav toggle %>
 		<button class="flex items-center p-2 -mr-1 rounded-lg focus:bg-gray-100" data-action="click->nav#toggleMenu touch->nav#toggleMenu">
-			<svg class="stroke-current text-gray-500 w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Menu</title><g fill="none"><path d="M4 6h16M4 12h8m-8 6h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+			<svg class="text-gray-500 stroke-current w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Menu</title><g fill="none"><path d="M4 6h16M4 12h8m-8 6h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
 		</button>
 	</div>
-	<div class="items-center w-full text-center lg:flex-1 lg:flex lg:text-left pt-2 lg:pt-0 hidden" data-nav-target="menu">
+	<div class="items-center hidden w-full pt-2 text-center lg:flex-1 lg:flex lg:text-left lg:pt-0" data-nav-target="menu">
 		<div class="lg:flex-grow">
 			<%= link_to "Basic Link", "#", class: "p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
 		</div>
